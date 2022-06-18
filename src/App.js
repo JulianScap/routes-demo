@@ -1,28 +1,26 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import BasePage1 from "./Components/BasePage1";
-import BasePage2 from "./Components/BasePage2";
-import Home from "./Components/Home";
-import Layout from "./Components/Layout";
+import ContentPage1 from "./Components/ContentPage1";
+import ContentPage2 from "./Components/ContentPage2";
+import Login from "./Components/Login";
+import Settings from "./Components/Settings";
 import NoPage from "./Components/NoPage";
-import OtherLayout from "./Components/OtherLayout";
+import MainPage from "./Components/MainPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="*" element={<NoPage />} />
+        <Route path="/">
+          <Route index element={<Login />} />
         </Route>
 
-        <Route path="/other-thing" element={<OtherLayout />}>
-          <Route index element={<Home />} />
-          <Route path="base1" element={<BasePage1 />} />
-          <Route path="base2" element={<BasePage2 />} />
+        <Route path="/main" element={<MainPage />}>
+          <Route path="content1" element={<ContentPage1 />} />
+          <Route path="content2" element={<ContentPage2 />} />
 
-          <Route path="lol" element={<Layout />}>
-            <Route path="base1" element={<BasePage1 />} />
-            <Route path="base2" element={<BasePage2 />} />
+          <Route path="settings" element={<Settings />}>
+            <Route path="setting1" element={<ContentPage1 />} />
+            <Route path="setting2" element={<ContentPage2 />} />
           </Route>
 
           <Route path="*" element={<NoPage />} />
