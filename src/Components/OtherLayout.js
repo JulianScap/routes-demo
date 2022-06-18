@@ -1,14 +1,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-const Layout = () => {
+const OtherLayout = () => {
   return (
     <React.Fragment>
-      Layout
+      OtherLayout
       <br />
       <Outlet />
     </React.Fragment>
   );
 };
 
-export default Layout;
+export default OtherLayout;
